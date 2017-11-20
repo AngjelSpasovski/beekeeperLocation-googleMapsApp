@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+  <title>My Beekeeper Location App</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+</head>
+<body>
+  <!-- NAV BAR -->
+   <nav id="header" class="navbar navbar-fixed-top">
+      <div id="header-container" class="container navbar-container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a id="brand" class="navbar-brand" href="#">BeekeeperLocation</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="#!/convert">Home</a></li>
+                  <li><a href="#!/list">List</a></li>
+              </ul>
+          </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+  </nav><!-- /.navbar -->
+
+  <!-- VIEW -->
+  <div class="container h-100 d-flex justify-content-center">
+    <div class="jumbotron my-auto">
+      <div ng-view></div>
+    </div>
+</div>
+  
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="app.js"></script>
+  <script src="home/homeController.js"></script>
+  <script src="list/list.js"></script>
+</body>
+</html>
