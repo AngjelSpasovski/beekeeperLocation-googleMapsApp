@@ -1,13 +1,15 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('webApp', [
   'ngRoute',
-  'beekeeper.home',
-  'beekeeper.login'
+  'webApp.home',
+  'webApp.login',
+  'webApp.register',
+  'webApp.welcome',
+  'webApp.addPost'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
 
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);

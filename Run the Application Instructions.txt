@@ -1,8 +1,0 @@
-
-1. cd beekeeperLocation-googleMapsApp
-
-2. npm install
-
-3. npm start
-
-4. localhost:8000

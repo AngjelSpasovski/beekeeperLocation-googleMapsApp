@@ -1,50 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<!--[if lt IE 7]>      <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="webApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
-  <title>My Convert App</title>
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyApw3ztTEuTTsVPBHZScYpf2lyuDaTxDOU",
+      authDomain: "beekeper-1c288.firebaseapp.com",
+      databaseURL: "https://beekeper-1c288.firebaseio.com",
+      projectId: "beekeper-1c288",
+      storageBucket: "beekeper-1c288.appspot.com",
+      messagingSenderId: "1094979903466"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 <body>
-  <!-- NAV BAR -->
-   <nav id="header" class="navbar navbar-fixed-top">
-      <div id="header-container" class="container navbar-container">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a id="brand" class="navbar-brand" href="#">BeekeeperGEOLoc</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                  <li class="active"><a href="#!/home">Home</a></li>
-                  <li class=""><a href="#!/login">LogIn / Registratio</a></li>
-              </ul>
-          </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-  </nav><!-- /.navbar -->
 
   <!-- VIEW -->
-  <div class="container h-100 d-flex justify-content-center">
-    <div class="jumbotron my-auto">
-      <div ng-view></div>
-    </div>
-</div>
-  
+  <div ng-view></div>
+
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
   <script src="app.js"></script>
-  <script src="home/home.controller.js"></script>
-  <script src="login/login.controller.js"></script>
+  <script type="text/javascript" src="home/home.js"></script>
+  <script type="text/javascript" src="login/login.js"></script>
+  <script type="text/javascript" src="register/register.js"></script>
+  <script type="text/javascript" src="welcome/welcome.js"></script>
+  <script type="text/javascript" src="addPost/addPost.js"></script>
+ 
 </body>
 </html>

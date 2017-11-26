@@ -1,47 +1,93 @@
 /* app css stylesheet */
 
-html,
+
 body {
-    overflow-x: hidden; /* Prevent scroll on narrow devices */
-}
-body {
-    padding-top: 100px;
-}
-footer {
-    padding: 30px 0;
+  //background: url(../images/yellow.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/*
- * Custom styles
- */
-.navbar-brand {
-    font-size: 24px;
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
 }
 
-.navbar-container {
-    padding: 20px 0 20px 0;
+.menu:before {
+  content: "[";
 }
 
-.navbar.navbar-fixed-top.fixed-theme {
-    background-color: #222;
-    border-color: #080808;
-    box-shadow: 0 0 5px rgba(0,0,0,.8);
+.menu:after {
+  content: "]";
 }
 
-.navbar-brand.fixed-theme {
-    font-size: 18px;
+.menu > li {
+  display: inline;
 }
 
-.navbar-container.fixed-theme {
-    padding: 0;
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
 }
 
-.navbar-brand.fixed-theme,
-.navbar-container.fixed-theme,
-.navbar.navbar-fixed-top.fixed-theme,
-.navbar-brand,
-.navbar-container{
-    transition: 0.8s;
-    -webkit-transition:  0.8s;
-}     
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
 
+.textName {
+  width: 50%;
+}
+
+.headTable {
+  width: 100%
+}
+
+.btnReg {
+  float: right;
+  border-radius: 15px 50px;
+  background: #D8B622;
+  padding: 18px; 
+  width: 173px;
+  height: 55px;
+}
+
+.btnBack {
+  float: left;
+  border-radius: 15px 50px;
+  background: #D8B622;
+  padding: 18px; 
+  width: 173px;
+  height: 55px;
+}
+
+.btnLogOut {
+  float: right;
+  border-radius: 15px 50px;
+  background: #D8B622;
+  padding: 18px; 
+  width: 173px;
+  height: 55px;
+}
+
+.leftPosition {
+  float: left;
+  width: 50%;
+}
+
+.rightPosition {
+  float: right;
+  width: 50%;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.infoBox {
+  overflow: auto;
+  height: 100px;
+}
