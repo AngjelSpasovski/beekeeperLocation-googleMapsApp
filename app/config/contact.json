@@ -1,0 +1,29 @@
+[
+	{
+		"id":1,
+		"name": "Sviripicino",
+		"street": "Ibe Palikukja bb",
+		"country": "Macedonia",
+		"city": "Skopje",
+		"zip_code": 1000,
+		"phone": "03/223-305"
+	},
+	{
+		"id":2,
+		"name": "Dolno Dupeni",
+		"street": "Krasimir Dolgopolov br.35",
+		"country": "Macedonia",
+		"city": "Skopje",
+		"zip_code": 1000,
+		"phone": "03/223-305"
+	},
+	{
+		"id":3,
+		"name": "Klecovce",
+		"street": "Veco Kenev",
+		"country": "Macedonia",
+		"city": "Skopje",
+		"zip_code": 1000,
+		"phone": "03/223-305"
+	}
+]

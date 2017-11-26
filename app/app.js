@@ -4,6 +4,8 @@
 angular.module('webApp', [
   'ngRoute',
   'webApp.home',
+  'webApp.about',
+  'webApp.contact',
   'webApp.login',
   'webApp.register',
   'webApp.welcome',
