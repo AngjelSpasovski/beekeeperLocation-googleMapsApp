@@ -9,7 +9,8 @@ angular.module('webApp', [
   'webApp.login',
   'webApp.register',
   'webApp.welcome',
-  'webApp.addPost'
+  'webApp.addPost',
+  'webApp.admin'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
 

@@ -18,45 +18,52 @@ angular.module('webApp.welcome', ['ngRoute', 'firebase'])
 		$location.path('/home');
 	}
 
+	//This will hide the DIV by default.
+    $scope.IsHidden = true;
+    $scope.ShowHide = function () {
+        //If DIV is hidden it will be visible and vice versa.
+        $scope.IsHidden = $scope.IsHidden ? false : true;
+    }
+
 	var ref = firebase.database().ref().child('Articles');
 	$scope.articles = $firebaseArray(ref);	
 
-	$scope.editPost = function(id){
-		var ref = firebase.database().ref().child('Articles/' + id);
-		$scope.editPostData = $firebaseObject(ref);
-	};
+	$scope.successAdd = true;
 
-	$scope.updatePost = function(id){
-		var ref = firebase.database().ref().child('Articles/' + id);
-		ref.update({
+	$scope.createPost = function(){
 
-			name: $scope.editPostData.name,
-			surname: $scope.editPostData.surname,
-			email: $scope.editPostData.email,
-			address: $scope.editPostData.address,
-			phone: $scope.editPostData.phone,
-			numberBees: $scope.editPostData.numberBees,
-			moreInfo: $scope.editPostData.moreInfo
-			
+		var name = $scope.article.name;
+		var surname = $scope.article.surname;
+		var email = $scope.article.email;
+		var phone = $scope.article.phone;
+		var address = $scope.article.address;
+		var numberBees = $scope.article.numberBees;
+		var moreInfo = $scope.article.moreInfo || "";
+
+		$scope.articles.$add({
+			name: name,
+			surname: surname,
+			email: email,
+			phone: phone,
+			address: address,
+			numberBees: numberBees,
+			moreInfo: moreInfo
 		}).then(function(ref){
-			$scope.$apply(function(){
-				$("#editModal").modal('hide');
-			});
+			console.log(ref);
+			$scope.success = true;
+			window.setTimeout(function() {
+				$scope.$apply(function(){
+					$scope.success = false;
+					CommonProp.logoutUser();
+				});
+			}, 2000);
 		}, function(error){
 			console.log(error);
 		});
 	};
 
-	$scope.deleteCnf = function(article){
-		$scope.deleteArticle = article;
-	};
-
-	$scope.deletePost = function(deleteArticle){
-		$scope.articles.$remove(deleteArticle);
-		$("#deleteModal").modal('hide');
-	};
-
 	$scope.logout = function(){
 		CommonProp.logoutUser();
-	}
+		$location.path('/');
+	};
 }])
