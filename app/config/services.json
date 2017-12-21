@@ -1,0 +1,25 @@
+[
+	{
+		"id": 1,
+		"name": "Hardware Repair",
+		"description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+		"image": "../lib/images/computer-solutions.png",
+		"contactButton": "Contact Us"
+	},
+
+	{
+		"id": 2,
+		"name": "Virus Removal",
+		"description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+		"image": "../lib/images/computer-solutions.png",
+		"contactButton": "Contact Us"
+	},
+
+	{
+		"id": 3,
+		"name": "System Tyneup",
+		"description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+		"image": "../lib/images/computer-solutions.png",
+		"contactButton": "Contact Us"
+	}
+]

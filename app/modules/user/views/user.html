@@ -1,0 +1,123 @@
+<!-- The justified navigation menu is meant for single line per list item.
+   Multiple lines will require custom code not provided by Bootstrap. -->
+   
+<!-- Master Head -->
+<div class="masthead">
+	<!-- Application Name -->
+	<table class="headTable">
+	  <tr>
+	    <td><h3 class="textName text-muted">Beekeeper GeoLokation</h3></td>
+	  </tr>
+	</table>
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">WebApp</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#/welcome">Welcome</a></li>
+				<li ng-click="logout()"><a href="#">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+
+</div><!-- END Master Head -->
+
+<div class="container" ng-show="success">
+	<div class="row">
+		<div class="alert alert-success">
+			<strong>Success!</strong> The beekeeper location has successfuly beed added.
+		</div>
+	</div>
+</div>
+
+<br>
+
+<!-- Fancy Button -->
+<table class="headTable">
+  <tr>
+  	<td><h3 class="centerText">Welcome Home {{username}} !</h3></td>
+    <td><input type="button" class="btn btn-info btnBack" value="Add Locations Data" ng-click="ShowHide()" /></td>
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+
+<!-- Success Message -->
+<div class="container" ng-show="success">
+	<div class="row">
+		<div class="alert alert-success">
+			<strong>Success!</strong> The beekeeper location has successfuly beed added.
+		</div>
+	</div>
+</div>
+
+<div class="container grayBackground" ng-hide = "IsHidden" ng-show="successAdd">
+	<form role="form" name="postForm" ng-submit="createPost()" novalidate="">
+		<legend>Create Post</legend>
+		<div class="row leftPosition">
+			<div class="col-lg-10">
+
+				<!-- Name  -->
+				<div class="form-group" ng-class="{'has-error': postForm.name.$invalid && postForm.name.$touched}">
+					<label for="name">Name</label>
+					<input type="text" name="name" class="form-control" placeholder="Name" ng-model="article.name" ng-minlength = "3" required="">
+					<small class="help-block" ng-show="postForm.name.$error.minlength && postForm.name.$touched">Please enter your name.</small>
+				</div>
+
+				<!-- Surname  -->
+				<div class="form-group" ng-class="{'has-error': postForm.surname.$invalid && postForm.surname.$touched}">
+					<label for="surname">Surname</label>
+					<input type="text" name="surname" class="form-control" placeholder="Surname" ng-model="article.surname" ng-minlength = "3" required="">
+					<small class="help-block" ng-show="postForm.surname.$error.minlength && postForm.surname.$touched">Please enter your surname.</small>
+				</div>
+
+				<!-- Email -->
+				<div class="form-group" ng-class="{'has-error': postForm.email.$invalid && postForm.email.$touched}">
+					<label for="email">Email Address</label>
+					<input type="email" name="email" ng-model="article.email" class="form-control" placeholder="Email Address" required="" />
+					<small class="help-block" ng-show="postForm.email.$invalid && postForm.email.$touched">Please enter an Email Address</small>
+				</div>
+
+				<!-- Phone Number -->
+				<div class="form-group" ng-class="{'has-error': postForm.phone.$invalid && postForm.phone.$touched}">
+					<label for="phone">Phone Number</label>
+					<input type="tel" pattern='[0-9]{9}' name="phone" ng-model="article.phone" class="form-control" placeholder="telephone number" required="" />
+					<small class="help-block" ng-show="postForm.phone.$invalid && postForm.phone.$touched">Please enter your Phone Number</small>
+				</div>
+
+				<!-- Address -->
+				<div class="form-group" ng-class="{'has-error': postForm.address.$invalid && postForm.address.$touched}">
+					<label for="address">Home Address</label>
+					<input type="text" name="address" ng-model="article.address" class="form-control" placeholder="Home Address" required="" />
+					<small class="help-block" ng-show="postForm.address.$invalid && postForm.address.$touched">Please enter your Home Address</small>
+				</div>
+
+				<!-- Number of Bees -->
+				<div class="form-group" ng-class="{'has-error': postForm.numberBees.$invalid && postForm.numberBees.$touched}">
+					<label for="numberBees">Number of bee familys</label>
+					<input type="number" name="numberBees" class="form-control" ng-model="article.numberBees" min="0" data-bind="value:replyNumber" />
+					<small class="help-block" ng-show="postForm.numberBees.$error.minlength && postForm.numberBees.$touched">Please enter ypur bumbers of bee familys.</small>
+				</div>
+
+				<!-- Description -->
+				<div class="form-group" ng-class="{'has-error': postForm.moreInfo.$invalid && postForm.moreInfo.$touched}">
+					<label for="moreInfo">Post</label>
+					<textarea name="moreInfo" class="form-control" placeholder="Post" ng-model="article.moreInfo"></textarea>
+				</div>
+
+				<!-- Submit Button -->
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid">Add Post</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="rightPosition">
+			<h1>Google Map</h1>
+			 <img src="images/googleMap.jpg" alt="Google Maps test image"> 
+		</div>
+	</form>
+</div>

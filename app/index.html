@@ -1,25 +1,29 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="webApp" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="app.css">
-  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Beekeeper GeoLokation</title>
+    <!--  Favicon-ico Errror solver -->
+    <link rel="icon" href="data:;base64,=">
+    <!-- Bootstrap core CSS -->
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="lib/css/style.css" rel="stylesheet">
+
+    <!-- Aplication Styles CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- Firebase Script -->
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+
+    <!-- Initialization of the Firebase -->
+    <script>
     var config = {
-      apiKey: "AIzaSyApw3ztTEuTTsVPBHZScYpf2lyuDaTxDOU",
+      apiKey: "AIzaSyApw3ztTEuTTsVPBHZScYpf2lyuDaTxDOU", // my private Firebase KEY
       authDomain: "beekeper-1c288.firebaseapp.com",
       databaseURL: "https://beekeper-1c288.firebaseio.com",
       projectId: "beekeper-1c288",
@@ -28,28 +32,53 @@
     };
     firebase.initializeApp(config);
   </script>
-</head>
-<body>
-
-  <!-- VIEW -->
-  <div ng-view></div>
 
 
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
-  <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="home/home.js"></script>
-  <script type="text/javascript" src="about/about.js"></script>
-  <script type="text/javascript" src="contact/contact.js"></script>
-  <script type="text/javascript" src="login/login.js"></script>
-  <script type="text/javascript" src="register/register.js"></script>
-  <script type="text/javascript" src="welcome/welcome.js"></script>
-  <script type="text/javascript" src="addPost/addPost.js"></script>
-  <script type="text/javascript" src="admin/admin.js"></script>
+
+  </head>
+
+  <body ng-app="beekeeperApp">
+   
+
+     
+      <!-- VIEW -->
+      <div class="container">
+        <div ng-view></div>
+
+        <!-- Site footer -->
+        <footer class="footer">
+          <p>&copy; Angjel Spasovski 2017 <i>angjel.spasovski@gmail.com</i></p>
+        </footer>
+      </div>
 
 
- 
-</body>
+    
+
+    </div> <!-- /container -->
+
+    <!-- Google Maps API -->
+    <!-- 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Z2bw3ciUFvAo8hE9tMRUI3UyjyRcOg4&callback=initMap" async defer></script>
+    -->
+
+    <!-- Scripts -->
+    <script src="lib/js/jquery-3.2.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="app.js"></script>
+    
+    <!-- Controllers -->
+    <script src="modules/home/controllers/home.controller.js"></script>
+    <script src="modules/about/controllers/about.controller.js"></script>
+    <script src="modules/contact/controllers/contact.controller.js"></script>
+    <script src="modules/login/controllers/login.controller.js"></script>
+    <script src="modules/registration/controllers/registration.controller.js"></script>
+    <script src="modules/user/controllers/user.controller.js"></script>
+    <script src="modules/admin/controllers/admin.controller.js"></script>
+
+    <!-- Services -->
+    <script src="modules/services/commonProp.service.js"></script>
+  </body>
 </html>

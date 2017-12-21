@@ -1,0 +1,67 @@
+
+body {
+  //background: url(../images/yellow.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.textName {
+  width: 50%;
+}
+
+.headTable {
+  width: 100%;
+  margin: -10px 0px 10px 0px;
+}
+
+.btnReg {
+  float: right;
+  border-radius: 15px 50px;
+  background: #D8B622;
+  padding: 18px; 
+  width: 173px;
+  height: 55px;
+}
+
+.btnBack {
+  float: left;
+  border-radius: 15px 50px;
+  background: #D8B622;
+  padding: 18px; 
+  width: 173px;
+  height: 55px;
+}
+
+.btnLogOut {
+  float: right;
+  border-radius: 15px 50px;
+  background: #D8B622;
+  padding: 18px; 
+  width: 173px;
+  height: 55px;
+}
+
+.leftPosition {
+  float: left;
+  width: 50%;
+}
+
+.rightPosition {
+  float: right;
+  width: 50%;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.infoBox {
+  overflow: auto;
+  height: 100px;
+}
+
+.grayBackground {
+  background-color: #e9e9e9;
+}
