@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <title>Beekeeper GeoLokation</title>
     <!--  Favicon-ico Errror solver -->
@@ -33,14 +33,8 @@
     firebase.initializeApp(config);
   </script>
 
-
-
-  </head>
-
   <body ng-app="beekeeperApp">
-   
 
-     
       <!-- VIEW -->
       <div class="container">
         <div ng-view></div>
@@ -51,15 +45,13 @@
         </footer>
       </div>
 
-
-    
-
     </div> <!-- /container -->
 
     <!-- Google Maps API -->
-    <!-- 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Z2bw3ciUFvAo8hE9tMRUI3UyjyRcOg4&callback=initMap" async defer></script>
-    -->
+    <!-- <script src="https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places"></script> -->
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Z2bw3ciUFvAo8hE9tMRUI3UyjyRcOg4" async defer></script> -->
+
 
     <!-- Scripts -->
     <script src="lib/js/jquery-3.2.1.min.js"></script>

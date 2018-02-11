@@ -1,4 +1,4 @@
-var app = angular.module("beekeeperApp", ['ngRoute', 'firebase']);
+var app = angular.module("beekeeperApp", ['ngRoute', 'firebase']); //,'ngMap'
 
 
 /*Configuration Routs*/
