@@ -13,11 +13,11 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">WebApp</a>
+				<a href="#/" ng-click="logout()" class="navbar-brand">Beekeeper</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#/welcome">Welcome</a></li>
-				<li ng-click="logout()"><a href="#">Logout</a></li>
+				<li ng-click="logout()"><a href="#/">Logout</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -117,7 +117,9 @@
 
 		<div class="rightPosition">
 			<h1>Google Map</h1>
-			 <img src="images/googleMap.jpg" alt="Google Maps test image"> 
+			<!-- <img src="images/googleMap.jpg" alt="Google Maps test image">  -->  
+			<div id="map_container" class="map_containerUser"></div>
+			 
 		</div>
 	</form>
 </div>

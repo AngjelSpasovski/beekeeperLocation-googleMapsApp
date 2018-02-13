@@ -26,6 +26,25 @@ app.service('CommonProp', ['$location', '$firebaseAuth', function($location, $fi
 			user = "";
 			localStorage.removeItem('userEmail');
 			$location.path('/home');
+		},
+
+		/* Google API */
+		initMap: function(mapContainer, latitude, longitude, zoomLevel){
+
+			var mapOptions = {
+	                zoom: zoomLevel,
+	                center: new google.maps.LatLng(latitude, longitude),
+	                mapTypeId: google.maps.MapTypeId.ROADMAP
+	            };
+
+	        $scope.map = new google.maps.Map(document.getElementById(mapContainer), mapOptions); 
+	        $scope.overlay = new google.maps.OverlayView();
+	        $scope.overlay.draw = function() {}; // empty function required
+	        $scope.overlay.setMap($scope.map);
+	        $scope.element = document.getElementById(mapContainer);
+			
 		}
-	};
+
+
+	};// return end
 }]);

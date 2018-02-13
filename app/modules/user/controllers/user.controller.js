@@ -21,10 +21,12 @@ app.controller('UserCtrl', ['$scope', 'CommonProp', '$firebaseArray', '$firebase
 
     $scope.successAdd = true;
 
+    // References in to the Articles in Firebase
 	var ref = firebase.database().ref().child('Articles');
 	$scope.articles = $firebaseArray(ref);
 
 
+	// Send the data in to the database
 	$scope.createPost = function(){
 
 		var name = $scope.article.name;
@@ -58,8 +60,29 @@ app.controller('UserCtrl', ['$scope', 'CommonProp', '$firebaseArray', '$firebase
 		});
 	};	
 
+	// Log Out
 	$scope.logout = function(){
 		CommonProp.logoutUser();
 		$location.path('/');
 	}
+
+	// Map initilization
+	$scope.initMap = function(mapContainer, latitude, longitude, zoomLevel){
+
+		var mapOptions = {
+                zoom: zoomLevel,
+                center: new google.maps.LatLng(latitude, longitude),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+        $scope.map = new google.maps.Map(document.getElementById(mapContainer), mapOptions); 
+        $scope.overlay = new google.maps.OverlayView();
+        $scope.overlay.draw = function() {}; // empty function required
+        $scope.overlay.setMap($scope.map);
+        $scope.element = document.getElementById(mapContainer);
+		
+	};
+
+	// Call Map function
+	$scope.initMap("map_container", 41.99646, 21.43141, 12);
 }])
